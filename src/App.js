@@ -3,51 +3,82 @@ import './App.css';
 import Keypad from './components/Keypad';
 import Screen from './components/Screen';
 import Box from './components/Box';
+import data from './components/data.json';
 
 function App() {
   const [code, setCode] = useState("");
 
-
-
   const [open, setOpen] = useState(false);
 
+
+
+  const findObjectByCode = (code) => {
+    const object = data?.find(item => item.code === code) ?? null;
+    if (object) {
+      const element = document.getElementById(`left-door-${object.id}`);
+      if (element) {
+        element.classList.toggle('door-open');
+        console.log("element suveike", element);
+      }
+
+    }
+    // return object ? object.id : null;
+  };
+
+
   const handleOpen = () => {
-    setOpen(!open); // Pakeičiame būseną į priešingą
+    setOpen(!open);
   };
 
 
   const handleClick = (value) => {
-    // paspaudus Clear isvalomas kodas
+    // paspaudus Clear išvalomas kodas
     if (value === "Clear") {
       setCode("");
+      const elements = document.getElementsByClassName("door");
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.remove("door-open");
+      }
+
     } else if (value === "OK") {
-      // dar nzn ar reiktu paspausti OK kad patikrinti koda ar ivedus tinkama kiek, patikrintu ar toks yra
-      handleOpen();
-console.log("ok");
+      // dar nežinau, ar reikia paspausti OK, kad patikrintumėte kodą ar įvedę tinkamą kiekį, 
+
+      // handleOpen();
+      console.log("OK");
     } else {
-      // leidzia ivesti atitinkama kieki skaiciu
-      if (code.length < 6) {
-        setCode(prevCode => prevCode + value)
+      // nurodyk kiek skaiciu ivesti
+      if (code.length < 4) {
+        setCode(prevCode => prevCode + value);
+        if ((code + value).length === 4) {
+          findObjectByCode(code + value);
+          // console.log(findObjectByCode(code + value));
+          console.log("Įvesti skaičiai:", code + value);
+        }
       }
     }
   };
+
+  const allBox = data.map((item, index) => {
+    return <Box key={index} doorID={`left-door-${item.id}`} open={open} title={item.box_title} />
+  })
+
+
+  const toggleOpen = (id) => {
+    const element = document.getElementById(`left-door-${id}`);
+    if (element) {
+      element.classList.toggle('door-open');
+    }
+  };
+
 
   return (
     <div className="App">
       <Screen code={code} />
       <Keypad handleClick={handleClick} />
       <div className='box-container'>
-      <div className="boxes">
-        <Box doorID="left-door-1" open={open} />
-        <Box doorID="left-door-2" />
-        <Box doorID="left-door-3" />
-        <Box doorID="left-door-4" />
-        <Box doorID="left-door-5" />
-        <Box doorID="left-door-6" />
-        <Box doorID="left-door-7" />
-        <Box doorID="left-door-8" />
-        <Box doorID="left-door-9" />
-      </div>
+        <div className="boxes">
+          {allBox}
+        </div>
       </div>
     </div>
   );

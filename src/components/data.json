@@ -1,0 +1,84 @@
+[
+    {
+      "id": 1,
+      "box_title": "Box 1",
+      "code": "1111",
+      "start_date": "2024-02-01",
+      "end_date": "2024-02-10",
+      "client_id": 123,
+      "client_title": "Client A"
+    },
+    {
+      "id": 2,
+      "box_title": "Box 2",
+      "code": "2222",
+      "start_date": "2024-02-05",
+      "end_date": "2024-02-15",
+      "client_id": 456,
+      "client_title": "Client B"
+    },
+    {
+      "id": 3,
+      "box_title": "Box 3",
+      "code": "3333",
+      "start_date": "2024-02-10",
+      "end_date": "2024-02-20",
+      "client_id": 789,
+      "client_title": "Client C"
+    },
+    {
+      "id": 4,
+      "box_title": "Box 4",
+      "code": "4444",
+      "start_date": "2024-02-15",
+      "end_date": "2024-02-25",
+      "client_id": 987,
+      "client_title": "Client D"
+    },
+    {
+      "id": 5,
+      "box_title": "Box 5",
+      "code": "5555",
+      "start_date": "2024-02-20",
+      "end_date": "2024-03-01",
+      "client_id": 654,
+      "client_title": "Client E"
+    },
+    {
+      "id": 6,
+      "box_title": "Box 6",
+      "code": "6666",
+      "start_date": "2024-02-25",
+      "end_date": "2024-03-05",
+      "client_id": 321,
+      "client_title": "Client F"
+    },
+    {
+      "id": 7,
+      "box_title": "Box 7",
+      "code": "7777",
+      "start_date": "2024-03-01",
+      "end_date": "2024-03-10",
+      "client_id": 987,
+      "client_title": "Client G"
+    },
+    {
+      "id": 8,
+      "box_title": "Box 8",
+      "code": "8888",
+      "start_date": "2024-03-05",
+      "end_date": "2024-03-15",
+      "client_id": 654,
+      "client_title": "Client H"
+    },
+    {
+      "id": 9,
+      "box_title": "Box 9",
+      "code": "9999",
+      "start_date": "2024-03-10",
+      "end_date": "2024-03-20",
+      "client_id": 321,
+      "client_title": "Client I"
+    }
+  ]
+  

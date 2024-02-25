@@ -5,7 +5,7 @@ const Screen = ({code}) => {
   return (
     <div className='screen-container'>
       <div className="screen-code">
-        <h1>{code}</h1>
+        <h1>{code ? code : "enter code"}</h1>
       </div>
     </div>
   )

@@ -1,29 +1,20 @@
 .keypad-container {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    margin: 20px 0;
+    max-width: 375px;
 }
 
 .keypad {
+    width: 100%;
     color: rgb(34, 34, 34);
     border-radius: 20px;
     display: grid;
-    /* border: 2px solid black; */
-    width: 375px;
-    height: 51dvh;
-    justify-content: space-evenly;
     grid-template-columns: repeat(3, 1fr);
-    /* gap: 5px; */
-    justify-items: center;
-    align-content: space-evenly;
+    gap: 10px;
 }
 
 .button {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border: 1px solid black;
     background-color: rgb(243, 243, 243);
     border-radius: 10px;
@@ -53,39 +44,32 @@
 
 .screen-container {
     background-color: bisque;
-    width: 370px;
-    height: 100px;
+    display: flex;
+    margin-top: 10px;
+    width: 330px;
+    height: 70px;
     border-radius: 10px;
-    position: absolute;
-    top: 7%;
-    left: 50%;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     color: rgb(121, 121, 121);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .box-container {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+
 }
 
 .boxes {
     color: rgb(34, 34, 34);
     border-radius: 20px;
     display: grid;
-    /* border: 2px solid black; */
-    width: 375px;
-    height: 39dvh;
     grid-template-columns: repeat(3, 1fr);
+    /* gap: 2px; */
     perspective: 1000px;
     justify-items: center;
     align-content: space-around;
 }
+
 .frame {
     height: 100px;
     width: 100px;
@@ -94,6 +78,7 @@
     position: relative;
     perspective: 1000px;
 }
+
 img {
     width: 100%;
     height: 100%;
@@ -109,9 +94,26 @@ img {
     align-items: center;
     width: 100px;
     height: 100px;
-    /* border: 1px solid black; */
     border-radius: 10px;
+    top: 0;
+    left: 0;
+    border-right: 1px solid black;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
 
+.inside {
+    color: rgb(255, 255, 255);
+    font-style: oblique;
+    font-size: 30px;
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
 }
 
 .knob {
@@ -125,12 +127,4 @@ img {
 
 .door-open {
     transform: rotateY(-140deg);
-}
-
-#left-door-1 {
-    top: 0;
-    left: 0;
-    border-right: 1px solid black;
-    transform-origin: left;
-    transition: transform 0.5s;
 }
